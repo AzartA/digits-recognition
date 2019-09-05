@@ -24,24 +24,25 @@ public class Test {
 			System.out.println("Learning...");
 			neurons = Arrays.copyOf(neurons, i);
 			wts = new NeuronNet(neurons);
-			
-			wts.selfLearning(7000, 0, 100, 0.5, 10, 0.15, 0, 0); 
+			wts.selfLearning(); 
+			//wts.selfLearning(7000, 0, 100, 0.5, 10, 0.15, 0, 0); 
 			System.out.println("Done. Saved to the file.");
 			break;
 		case 2:
 			sc.close();
 			System.out.println("Guessing...");
 			wts = NeuronNet.loadFromF();
-			
-			wts.loadInputNumbers(7000, 0);
+			int count = 700; // count of each number [0-9]
+			//wts.loadInputNumbers(7000, 0);
+			wts.loadInputNumbers(count, 1200);
 			i=0;
-			for(int u = 0; u<70000;u++) {
+			for(int u = 0; u<count*10;u++) {
 				if((int)wts.inputNumbers[u][wts.inputNumbers[0].length-1]==wts.getDigit(wts.inputNumbers[u])) {
 					i++;
 				}
 				//System.out.println("The number \"" +nn.inputNumbers[u][784] + "\" is \"" + nn.takeDigit(nn.inputNumbers[u]) + "\".");
 			}
-			System.out.printf("The network prediction accuracy: " + i + "/" + 70000 + ", %1$.2f%1$1%", (double)i*100/70000);
+			System.out.printf("The network prediction accuracy: " + i + "/" + (count*10) + ", %1$.2f%1$1%", (double)i*100/(count*10));
 			
 			break;
 		default:
