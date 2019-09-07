@@ -34,3 +34,5 @@ hs_err_pid*
 /.settings/
 /build/
 /digits-recognition/
+/nnw4.bin
+/nnw5b.bin

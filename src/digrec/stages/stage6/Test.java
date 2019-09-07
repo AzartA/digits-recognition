@@ -11,8 +11,9 @@ public class Test {
 		NeuronNet wts;
 		int i;
 		Scanner sc = new Scanner(System.in);
-		System.out.println("1. Learn the network\r\n" + 
-				"2. Guess all numbers\r\nYour choice: ");
+		System.out.println("1. Learn the network\n" + 
+				"2. Guess all numbers" + 
+				"3. Guess a number from  a text file\nYour choice: ");
 		switch (sc.nextInt()) {
 		case 1:
 			System.out.print("Enter the sizes of the layers: ");
@@ -24,8 +25,11 @@ public class Test {
 			System.out.println("Learning...");
 			neurons = Arrays.copyOf(neurons, i);
 			wts = new NeuronNet(neurons);
-			wts.selfLearning(); 
-			//wts.selfLearning(7000, 0, 100, 0.5, 10, 0.15, 0, 0); 
+
+			//wts.selfLearning(1000, 0, 100, 0.5, 10, 0.15, 0, 0); // 784 6 16 10 - 87,44%
+			wts.selfLearning(1000, 0, 100, 0.5, 10, 0.15, 0, 0); // 784 16 16 10 - nnw5c - 91.92%
+			//wts.selfLearning(7000, 0, 100, 0.5, 10, 0.15, 0, 0); // 784 16 16 10 - 97,21%
+
 			System.out.println("Done. Saved to the file.");
 			break;
 		case 2:
@@ -40,10 +44,18 @@ public class Test {
 				if((int)wts.inputNumbers[u][wts.inputNumbers[0].length-1]==wts.getDigit(wts.inputNumbers[u])) {
 					i++;
 				}
-				//System.out.println("The number \"" +nn.inputNumbers[u][784] + "\" is \"" + nn.takeDigit(nn.inputNumbers[u]) + "\".");
+				
 			}
 			System.out.printf("The network prediction accuracy: " + i + "/" + (count*10) + ", %1$.2f%1$1%", (double)i*100/(count*10));
 			
+			break;
+		case 3:	
+			System.out.println("Enter filename:");
+			String file = sc.next();
+			sc.close();
+			wts = NeuronNet.loadFromF();
+			
+			System.out.println("The number is " + wts.getDigit(wts.inputNumbers[u]);
 			break;
 		default:
 			System.out.println("Unknown comand.");
