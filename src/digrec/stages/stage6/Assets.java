@@ -16,6 +16,7 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Scanner;
 import java.util.logging.Level;
+import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 public class Assets implements Serializable {
@@ -83,6 +84,21 @@ public class Assets implements Serializable {
 		}catch(IOException ex) {
 			ex.printStackTrace();
 		}
+		
+	}
+	
+	public void getinputSample (String fileName){
+		try(FileSystem zipFileSys = FileSystems.newFileSystem(ZIP_PATH, null)) {
+			Path path = zipFileSys.getPath("/data/" + fileName);
+			Scanner sc = new Scanner (path);
+			for(int i = 0; i<785; i++) {
+				inputSample[i] = sc.nextInt();
+			}
+			sc.close();
+		}catch(IOException ex) {
+			ex.printStackTrace();
+		}
+		LOGGER.log(Level.INFO, "The imput sample has downloaded.");
 	}
 	
 	public void saveToF() {

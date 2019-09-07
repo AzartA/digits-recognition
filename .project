@@ -3,27 +3,6 @@
 	<name>digits-recognition</name>
 	<comment></comment>
 	<projects>
-<<<<<<< HEAD
-		<project>Digits Recognition</project>
-	</projects>
-	<buildSpec>
-		<buildCommand>
-			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
-			<name>org.eclipse.wst.common.project.facet.core.builder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-	</buildSpec>
-	<natures>
-		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
-		<nature>org.eclipse.jdt.core.javanature</nature>
-	</natures>
-</projectDescription>
-=======
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -36,4 +15,3 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
 </projectDescription>
->>>>>>> refs/heads/lastStage

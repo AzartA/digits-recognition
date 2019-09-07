@@ -30,3 +30,7 @@ hs_err_pid*
 /nnw5a.bin
 >>>>>>> refs/heads/lastStage
 /src/
+/assets/
+/.settings/
+/build/
+/digits-recognition/

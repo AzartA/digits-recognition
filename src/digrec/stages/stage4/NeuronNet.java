@@ -195,19 +195,19 @@ public class NeuronNet implements Serializable {
 						/*if(idealNeurons[l+1][j]==0.0) {
 								continue;
 						}*/
-						idealNeurons[l][i] += idealNeurons[l+1][j]/weights[l+1][j][i];
+						idealNeurons[l][i] += idealNeurons[l+1][j]/weights[l+1][j][i] *iIL;
 					}
 					
 				}
 				
 			}
-			for(int m = 0; m<idealNeurons[l].length; m++) {
+			/*for(int m = 0; m<idealNeurons[l].length; m++) {
 				idealNeurons[l][m] = idealNeurons[l][m]*iIL;
 				idealNeurons[l][m] = MatrixMath.Sigmoid(idealNeurons[l][m]);
 				
 				//idealNeurons[l][m] =(idealNeurons[l][m] < 0)?0:idealNeurons[l][m];
 				//idealNeurons[l][m] =(idealNeurons[l][m]>1?1:idealNeurons[l][m]);
-			}
+			}*/
 		}
 	}
 

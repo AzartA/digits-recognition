@@ -7,6 +7,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Arrays;
+import java.util.Random;
+import java.util.logging.Level;
+
+import digrec.stages.stage3.Weights;
+import digrec.stages.stage6.MatrixMath;
 import digrec.stages.stage6.NeuronNet;
 import digrec.stages.stage6.Assets;
 public class Test  {
